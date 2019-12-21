@@ -1,7 +1,7 @@
 # Configuration README
 
 This repository contains configuration instructions and files for setting up a cloud camera.
-There are, roughly speaking, three main things necessary for setting this up:
+There are, roughly speaking, three necessary aspects for setting this up:
 
 * [Real-time access](#real-time-access) to the camera
 * [FTP Server](#ftp-server) for storing the files
@@ -10,12 +10,28 @@ There are, roughly speaking, three main things necessary for setting this up:
 
 ## Real-time Access
 
-This is a section
+Setting up real-time access to a camera is relatively simple.
+It is also completely decoupled from the rest of the configuration, so it's easy to start with it.
+
+1. Set up a static ip address
+2. update dns hostname
+3. router port forward
+
 
 ## FTP Server
 
-This is another section
+1. install vsftpd
+2. add camera user
+3. add usb mount to fstab
+4. configure vsftpd.conf
+5. install ufw
+6. setup ufw tcp and ftp access
+7. Enable vsftpd/ufw services
+	a great amount of important stuff
+very good stuff	
+8. Disable shell for camera user
+
 
 ## Cloud Storage
 
-This is the last section
+1. install megacmd cli
