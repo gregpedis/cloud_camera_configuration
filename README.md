@@ -9,6 +9,9 @@ There are, roughly speaking, three main things necessary for setting this up:
 
 
 
+* [Real-time access to the camera](#real-time-access)
+* [FTP Server for storing the files](#ftp-server)
+* [Cloud Storage for backups](#cloud-storage)
 
 
 
