@@ -21,7 +21,10 @@ It is also completely decoupled from the rest of the configuration, so it's easy
 
 ## FTP Server
 
-1. install vsftpd
+### install vsftpd
+
+good stuff
+
 2. add camera user
 3. add usb mount to fstab
 4. configure vsftpd.conf
