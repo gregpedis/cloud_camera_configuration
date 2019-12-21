@@ -13,7 +13,7 @@ There are, roughly speaking, three main things necessary for setting this up:
 
 
 
-## Real-time access
+## Real-time Access
 
 This is a section
 
