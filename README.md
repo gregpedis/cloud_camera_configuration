@@ -26,8 +26,9 @@ It is also completely decoupled from the rest of the configuration, so it's easy
 4. configure vsftpd.conf
 5. install ufw
 6. setup ufw tcp and ftp access
+
 7. Enable vsftpd/ufw services
-	a great amount of important stuff
+a great amount of important stuff
 very good stuff	
 8. Disable shell for camera user
 
