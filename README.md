@@ -3,12 +3,12 @@
 This repository contains configuration instructions and files for setting up a cloud camera.
 There are, roughly speaking, three main things necessary for setting this up:
 
-- Real-time access to the camera
+- [Real-time access to the camera](#something) 
 - FTP Server for storing the files
 - Cloud Backups
 
 
-[Link To Something](README.md#something)
+[Link To Something](#something)
 
 [asdf](docs/something)
 
