@@ -48,7 +48,7 @@ Initially, some packages are needed.
 
 `sudo apt install vsftpd ufw -y`
 
-`vsftpd` stands for **ry secure FTP Daemon** and it one of most used and easiest to setup FTP services.
+`vsftpd` stands for **very secure ftp daemon** and it one of most used and easiest to setup FTP services.
 
 `ufw` stands for **uncomplicated firewall** and is a higher level interface for handling the device's firewall, 
 which is necessary for opening the FTP Server's needed **ports**.
