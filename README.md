@@ -53,7 +53,7 @@ Initially, some packages are needed.
 `ufw` stands for **uncomplicated firewall** and is a higher level interface for handling the device's firewall, 
 which is necessary for opening the FTP server's needed **ports**.
 
-Let's say that the user using the FTP will be called *** camera *** and the ftp's directory will be ***/home/camera/ftp***.
+Let's say that the user using the FTP will be called ***camera*** and the ftp's directory will be ***/home/camera/ftp***.
 
 Firstly, opening the mentioned ports via the ufw cli.
 
@@ -89,8 +89,8 @@ This is necessary to achieve a `chroot` jail, which makes this ftp setup even mo
 
 `sudo chown camera:camera /home/camera/ftp/files`
 
-What happens is that the */home/camera/ftp* directory will be the FTP's `chroot` which does not have write privileges, 
-while the */home/camera/ftp/files* will be the directory that the camera writes to.
+What happens is that the ***/home/camera/ftp*** directory will be the FTP's `chroot` which does not have write privileges, 
+while the ***/home/camera/ftp/files*** will be the directory that the camera writes to.
 
 After all that, it's time to actually configure **vsftpd**. The way that happens is by editing the *.conf* file of the service,
 which exists at */etc/vsftpd.conf*. Saving the original configuration as backup is always a wise decision.
