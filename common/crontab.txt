@@ -1,10 +1,11 @@
 # Updating the ddns.
 # Example is every 3 minutes.
 */3 * * * * /usr/bin/curl -u <email>:<password> https://now-dns.com/update?hostname=<hostname>
+
 # Cleaning up the camera files folder.
 # Example is every day at 4:00 AM.
 0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py
+
 # Logs the date and temperature of the raspberry pi.
 # Example is every 30 minutes.
 */30 * * * * (/bin/date && /usr/bin/vcgencmd measure_temp) | xargs -d "\n" >> /home/camera/ftp/files/temp-checkup.txt
-
