@@ -23,14 +23,14 @@ whereas the rest of the files are segments or completed parts of the camera's oc
 
 The system used has the following properties.
 
-```
-OS: Raspbian GNU/Linux 10 (buster) armv7l
-Host: Raspberry Pi 3 Model B Plus Rev 1.3
-Kernel: 4.19.75-v7+
-Uptime: 11 days, 1 hour, 19 mins
-Packages: 891 (dpkg)
-Shell: bash 5.0.3
-Terminal: /dev/pts/0
-CPU: BCM2835 (4) @ 1.400GHz
-Memory: 174MiB / 926MiB
-```
+<pre>
+<b>OS:</b> Raspbian GNU/Linux 10 (buster) armv7l
+<b>Host:</b> Raspberry Pi 3 Model B Plus Rev 1.3
+<b>Kernel:</b> 4.19.75-v7+
+<b>Uptime:</b> 11 days, 1 hour, 19 mins
+<b>Packages:</b> 891 (dpkg)
+<b>Shell:</b> bash 5.0.3
+<b>Terminal:</b> /dev/pts/0
+<b>CPU:</b> BCM2835 (4) @ 1.400GHz
+<b>Memory:</b> 174MiB / 926MiB
+</pre>
