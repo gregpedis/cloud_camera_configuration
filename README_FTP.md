@@ -83,7 +83,7 @@ And add the following line at the end of the file, replacing the *\<my-usb-uuid\
 
 With this directory/mounting configuration,
 the path ***/home/camera/ftp/files*** can map to either **external** device or the **internal** filesystem,
-depending on fstab finding the device during startup or not. Neat.
+depending on fstab finding the device during startup. Neat.
 
 ---
 
