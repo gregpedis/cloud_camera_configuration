@@ -19,5 +19,5 @@ The files are sorted based on their use case, which results in three folders:
 * [cloud](cloud) - Configuration files for the cloud storage.
 * [common](common) - Configuration files with general purpose.
 
-The *.txt* files usually are examples, details or cli tool outputs, 
+The *.txt* files usually are examples, details or command-line outputs, 
 whereas the rest of the files are segments or completed parts of the camera's ocnfriguration.
