@@ -92,9 +92,7 @@ which exists at */etc/vsftpd.conf*. Saving the original configuration as backup 
 
 The necessary configuration is [linked here](ftp/vsftpd.conf).
 
-To add the ***camera*** user to the accepted list of ftp users, 
-either copy [this file](ftp/vsftpd.userlist) in the ***/etc*** directory 
-or execute the following command.
+To add the ***camera*** user to the accepted list of ftp users execute the following command.
 
 `echo "camera" | sudo tee -a /etc/vsftpd.userlist`
 
