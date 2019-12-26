@@ -1,7 +1,5 @@
 # FTP Server
 
-Setting up an ftp server requires slightly more complicated configuration.
-
 Initially, some packages are needed.
 
 `sudo apt update`
