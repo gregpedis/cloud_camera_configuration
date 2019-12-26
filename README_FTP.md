@@ -35,6 +35,8 @@ Checking if the ports are indeed open.
 
 `sudo ufw status/tcp`
 
+The result should look [like this](ftp/ufw_status.txt).
+
 ---
 
 Add the new ***camera*** user.
@@ -72,6 +74,8 @@ The necessary configuration is [linked here](ftp/vsftpd.conf).
 To add the ***camera*** user to the accepted list of ftp users, the following command needs to be executed.
 
 `echo "camera" | sudo tee -a /etc/vsftpd.userlist`
+
+Or just copy [this file](ftp/vsftpd.userlist) in the /etc directory.
 
 In order for the `vsftpd` and `ufw` services to start on every system **reboot**, they have to be **enabled**.
 
