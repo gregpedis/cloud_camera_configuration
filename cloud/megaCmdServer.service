@@ -1,0 +1,17 @@
+[Unit]
+Description=Starting the mega-cmd-server that backups the necessary files.
+Wants=network.target
+After=network.target
+StartLimitIntervalSec=600
+StartLimitBurst=60
+StartLimitAction=reboot
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=root
+ExecStart=/usr/bin/mega-cmd-server
+
+[Install]
+WantedBy=multi-user.target
