@@ -1,7 +1,5 @@
 # FTP Server
 
-# Reminder to add usb mount to fstab
-
 Setting up an ftp server requires slightly more complicated configuration.
 
 Initially, some packages are needed.
@@ -59,6 +57,33 @@ sudo chown camera:camera /home/camera/ftp/files
 
 What happens is that the ***/home/camera/ftp*** directory will be the FTP's `chroot` which does not have write privileges, 
 while the ***/home/camera/ftp/files*** will be the directory that the camera writes to.
+
+---
+
+You might want to use an external device as your storage, so next up is mounting said block device.
+Run the following command to check your pre-existing devices.
+
+`ls -lA /dev/disk/by-uuid`
+
+Then plug the device and run the same command again.
+You should find a new entry in the list of devices, since the system discovers it automatically.
+For example, by plugging a usb dongle there should be a new device named **sda**-*something*.
+<pre><i>lrwxrwxrwx 1 root root 10 Dec 26 12:56</i> <b>2653-CF8E</b> -> ../../sda1</pre>
+
+The important thing here is the **UUID**, marked with bold, 
+since it's the unique id necessary for the system to auto-mount the device on reboot.
+All that's left is to add an entry to the file responsible for that operation.
+
+Execute the following to edit it.
+
+`sudo vim /etc/fstab`
+
+And add the following line at the end of the file, replacing the *\<my-usb-uuid\>* with your device's **UUID**.
+<pre><b>UUID</b>=<i>&ltmy-usb-uuid&gt</i> home/camera/ftp/files <b>auto nosuid,nodev,nofail</b> 0 0</pre>
+
+With this directory/mounting configuration,
+the path ***/home/camera/ftp/files*** can map to either **external** device or the **internal** filesystem,
+depending on fstab finding the device during startup or not. Neat.
 
 ---
 
