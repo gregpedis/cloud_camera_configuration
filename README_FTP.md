@@ -17,9 +17,11 @@ Initially, some packages are needed.
 `ufw` stands for **uncomplicated firewall** and is a higher level interface for handling the device's firewall, 
 which is necessary for opening the FTP server's needed **ports**.
 
+---
+
 Let's say that the user using the FTP will be called ***camera*** and the ftp's directory will be ***/home/camera/ftp***.
 
-Firstly, opening the mentioned ports via the ufw cli.
+Open the mentioned ports via the ufw cli.
 
 `sudo ufw allow 20/tcp`
 
@@ -33,11 +35,13 @@ Checking if the ports are indeed open.
 
 `sudo ufw status/tcp`
 
-After that, adding the new ***camera*** user.
+---
+
+Add the new ***camera*** user.
 
 `sudo adduser camera`
 
-While also creating the **ftp directory** with the right **owner** and **permissions**.
+Create the **ftp directory** with the right **owner** and **permissions**.
 
 `sudo mkdir /home/camera/ftp`
 
@@ -46,7 +50,7 @@ While also creating the **ftp directory** with the right **owner** and **permiss
 `sudo chmod a-w /home/camera/ftp`
 
 
-Also, creating a directory where the actual camera files reside.
+Create a directory where the actual camera files reside.
 This is necessary to achieve a `chroot` jail, which makes this ftp setup even more secure.
 
 `sudo mkdir /home/camera/ftp/files`
@@ -56,12 +60,14 @@ This is necessary to achieve a `chroot` jail, which makes this ftp setup even mo
 What happens is that the ***/home/camera/ftp*** directory will be the FTP's `chroot` which does not have write privileges, 
 while the ***/home/camera/ftp/files*** will be the directory that the camera writes to.
 
-After all that, it's time to actually configure **vsftpd**. The way that happens is by editing the *.conf* file of the service,
+---
+
+It's time to actually configure **vsftpd**. The way that happens is by editing the *.conf* file of the service,
 which exists at */etc/vsftpd.conf*. Saving the original configuration as backup is always a wise decision.
 
 `sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig`
 
-The necessary configuration is [linked here](#cloud-storage).
+The necessary configuration is [linked here](ftp/vsftpd.conf).
 
 To add the ***camera*** user to the accepted list of ftp users, the following command needs to be executed.
 
@@ -71,10 +77,13 @@ In order for the `vsftpd` and `ufw` services to start on every system **reboot**
 
 `sudo systemctl enable vsftpd ufw`
 
-Finally, disabling the shell access of the ***camera*** user is a good step towards better securing the server's protection against malicious intent.
+---
+
+Disabling the shell access of the ***camera*** user 
+is a good step towards better securing the server's protection against malicious intent.
 That means that the logging as the ***camera*** user will not be possible.
 
-Copy [this file](#somesome) in the `/bin` directory.
+Copy [this file](ftp/ftponly) in the `/bin` directory.
 
 Alter the file's permissions as follows.
 
@@ -87,6 +96,8 @@ Add the new shell new shell to the list of shells.
 Update the user's shell with the following command.
 
 `sudo usermod camera -s /bin/ftponly`
+
+---
 
 Everything should be working as intended after restarting the device.
 
