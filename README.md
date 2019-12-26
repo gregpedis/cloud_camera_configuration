@@ -1,4 +1,4 @@
-# Configuration README
+# README
 
 This repository contains configuration instructions and files for setting up a cloud camera.
 There are, roughly speaking, three necessary aspects for setting this up:
