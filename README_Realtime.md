@@ -4,7 +4,7 @@ Setting up real-time access to a camera is relatively simple.
 
 It is also completely decoupled from the rest of the configuration, so it's easy to start with it.
 
-First, setting a **static** ip address is needed. That is done by accessing the *dhcp address reservation* panel in the router
+First, setting a **static** ip address is needed. That is done by accessing the **dhcp address reservation** panel in the router
 and binding a lan ip address to the camera's mac address.
 
 Secondly, the camera is exposed via a **port** to the local network. That port has to be **forwarded** by the router to the camera,
