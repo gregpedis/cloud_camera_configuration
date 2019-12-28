@@ -51,13 +51,10 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 
 ---
 
-Add the new ***camera*** user.
-
-`sudo adduser camera`
-
-Create the **ftp directory** with the right **owner** and **permissions**.
+Add the new ***camera*** user. Afterwards, create the **ftp directory** with the right **owner** and **permissions**.
 
 ```
+sudo adduser camera
 sudo mkdir /home/camera/ftp
 sudo chown nobody:nogroup /home/camera/ftp
 sudo chmod a-w /home/camera/ftp
