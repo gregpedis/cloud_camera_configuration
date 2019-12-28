@@ -61,7 +61,7 @@ sudo chmod a-w /home/camera/ftp
 ```
 
 Create a directory where the actual camera files reside.
-This is necessary to achieve a `chroot` jail, which makes this ftp setup even more secure.
+This is necessary to achieve a `chroot` jail, which makes the setup even more secure.
 
 ```
 sudo mkdir /home/camera/ftp/files
