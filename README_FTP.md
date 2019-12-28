@@ -105,7 +105,7 @@ Saving the original file as backup is always a wise decision.
 
 Copy [this file](ftp/vsftpd.conf) in `/etc/`. 
 
-To add the ***camera*** user to the accepted list of ftp users execute the following command.
+To add the **camera** user to the accepted list of ftp users execute the following command.
 
 `echo "camera" | sudo tee -a /etc/vsftpd.userlist`
 
