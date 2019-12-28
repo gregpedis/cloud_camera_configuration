@@ -103,7 +103,7 @@ Saving the original file as backup is always a wise decision.
 
 `sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig`
 
-Copy [this file](ftp/vsftpd.conf) in `/etc/`. 
+Copy [this file](ftp/vsftpd.conf) in the `/etc` directory. 
 
 To add the **camera** user to the accepted list of ftp users execute the following command.
 
@@ -115,9 +115,7 @@ In order for the `vsftpd` and `ufw` services to start on every system **reboot**
 
 ---
 
-Disabling the shell access of the ***camera*** user 
-is a good step towards better securing the server's protection against malicious intent.
-That means that the logging as the ***camera*** user will not be possible.
+Disabling the shell access of the **camera** user is a good step towards better security.
 
 Copy [this file](ftp/ftponly) in the `/bin` directory.
 
@@ -125,7 +123,7 @@ Alter the file's permissions as follows.
 
 `sudo chmod a+x /bin/ftponly`
 
-Add the new shell new shell to the list of shells.
+Add the new **shell** to the list of shells.
 
 `echo "/bin/ftponly" | sudo tee -a /etc/shells`
 
