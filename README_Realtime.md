@@ -18,7 +18,7 @@ In order to update the ip address and the domain name in a linux environment,
 a single line of code should be added to the user's **crontab**. 
 To access that crontab, just use the following command.
 
-`crontab -e -u <user>`
+<pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
 Add the following line, 
 replacing all the needed values with the ones from your dynamic dns provider account.
