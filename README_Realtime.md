@@ -23,6 +23,6 @@ To access that crontab, just use the following command.
 Add the following line, 
 replacing all the needed values with the ones from your dynamic dns provider account.
 
-`curl -u <email>:<password> "https://now-dns.com/update?hostname=<hostname>"`
+<pre>curl -u <b>&ltemail&gt</b>:<b>&ltpassword&gt</b> "https://now-dns.com/update?hostname=<b>&lthostname&gt</b>"</pre>
 
 Remote, real-time access to the camera should be working by now.
