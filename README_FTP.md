@@ -81,15 +81,12 @@ Run the following command to check your pre-existing devices.
 Then plug the device and run the same command again.
 You should find a new entry in the list of devices, since the system discovers it automatically.
 For example, by plugging a usb dongle there should be a new device named **sda**-*something*.
+
 <pre><i>lrwxrwxrwx 1 root root 10 Dec 26 12:56</i> <b>2653-CF8E</b> -> ../../sda1</pre>
 
 The important thing here is the **UUID**, marked with bold, 
 since it's the unique id necessary for the system to auto-mount the device on reboot.
-All that's left is to add an entry to the file responsible for that operation.
-
-Execute the following to edit it.
-
-`sudo vim /etc/fstab`
+All that's left is to add the following line to the end of the file at `/etc/fstab/`.
 
 And add the following line at the end of the file, replacing the *\<my-usb-uuid\>* with your device's **UUID**.
 <pre><b>UUID</b>=<i>&ltmy-usb-uuid&gt</i> home/camera/ftp/files <b>auto nosuid,nodev,nofail</b> 0 0</pre>
