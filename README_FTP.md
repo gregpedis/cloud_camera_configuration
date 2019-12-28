@@ -103,8 +103,7 @@ Saving the original file as backup is always a wise decision.
 
 `sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig`
 
-The necessary configuration is [linked here](ftp/vsftpd.conf).
-Copy the file in `/etc/`. 
+Copy [this file](ftp/vsftpd.conf) in `/etc/`. 
 
 To add the ***camera*** user to the accepted list of ftp users execute the following command.
 
