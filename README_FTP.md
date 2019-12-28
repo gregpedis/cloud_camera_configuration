@@ -1,12 +1,12 @@
 # FTP Server
-
 Initially, some packages are needed.
+
 ```
 sudo apt update
 sudo apt install vsftpd ufw -y
 ```
-*Updating the list of packages before installing any of them is always not a terrible idea.*
 
+*Updating the list of packages before installing any of them is always not a terrible idea.*
 
 `vsftpd` stands for **very secure ftp daemon** and is one of most used and easiest to setup FTP services.
 
