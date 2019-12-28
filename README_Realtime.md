@@ -22,7 +22,7 @@ access the crontab of **user** via the following command.
 <pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
 Add the following line at the end of the file, 
-replacing all the needed values with the ones from your dynamic dns provider account.
+replacing all the bold values with the ones from your dynamic dns provider account.
 
 <pre>curl -u <b>&ltemail&gt</b>:<b>&ltpassword&gt</b> "https://now-dns.com/update?hostname=<b>&lthostname&gt</b>"</pre>
 
