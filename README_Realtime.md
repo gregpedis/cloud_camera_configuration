@@ -6,7 +6,8 @@ in order to set a **static** ip address.
 
 ---
 
-The camera is exposed via a **port** to the local network. **Port-forward** that port from the router to the camera,
+The camera is exposed via a **port** to the local network.
+**Port-forward**  from the router to the camera
 so that it is possible to be accessed outside of the local network.
 
 ---
