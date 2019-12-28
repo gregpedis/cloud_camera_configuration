@@ -118,7 +118,6 @@ In order for the `vsftpd` and `ufw` services to start on every system **reboot**
 Disabling the shell access of the **camera** user is a good step towards better security.
 
 Copy [this file](ftp/ftponly) in the `/bin` directory.
-
 Alter the file's permissions as follows.
 
 `sudo chmod a+x /bin/ftponly`
