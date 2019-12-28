@@ -16,7 +16,7 @@ which is necessary for opening the FTP server's needed **ports**.
 
 ---
 
-Let's say that the user using the FTP will be called ***camera*** and the ftp's directory will be `/home/camera/ftp`.
+Let's say that the user using the FTP will be called **camera** and the ftp's directory will be `/home/camera/ftp`.
 
 Open the mentioned ports via the ufw cli.
 
@@ -50,7 +50,7 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 
 ---
 
-Add the new ***camera*** user and then create the **ftp directory** with the right **owner** and **permissions**.
+Add the new **camera** user and then create the **ftp directory** with the right **owner** and **permissions**.
 
 ```
 sudo adduser camera
@@ -92,13 +92,13 @@ replacing the *\<my-usb-uuid\>* with your device's **UUID**.
 <pre><b>UUID</b>=<i>&ltmy-usb-uuid&gt</i> home/camera/ftp/files <b>auto nosuid,nodev,nofail</b> 0 0</pre>
 
 With this directory/mounting configuration,
-the path ***/home/camera/ftp/files*** can map to either **external** device or the **internal** filesystem,
+the path `/home/camera/ftp/files` can map to either **external** device or the **internal** filesystem,
 depending on fstab finding the device during startup. Neat.
 
 ---
 
 It's time to actually configure **vsftpd**. The way that happens is by editing the *.conf* file of the service,
-which exists at */etc/vsftpd.conf*. Saving the original configuration as backup is always a wise decision.
+which exists at `/etc/vsftpd.conf`. Saving the original configuration as backup is always a wise decision.
 
 `sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig`
 
