@@ -16,7 +16,7 @@ which is necessary for opening the FTP server's needed **ports**.
 
 ---
 
-Let's say that the user using the FTP will be called ***camera*** and the ftp's directory will be ***/home/camera/ftp***.
+Let's say that the user using the FTP will be called ***camera*** and the ftp's directory will be `/home/camera/ftp`.
 
 Open the mentioned ports via the ufw cli.
 
@@ -68,8 +68,8 @@ sudo mkdir /home/camera/ftp/files
 sudo chown camera:camera /home/camera/ftp/files
 ```
 
-What happens is that the ***/home/camera/ftp*** directory will be the FTP's `chroot` which does not have write privileges, 
-while the ***/home/camera/ftp/files*** will be the directory that the camera writes to.
+What happens is that the `/home/camera/ftp` directory will be the FTP's `chroot` which does not have write privileges, 
+while the `/home/camera/ftp/files` will be the directory that the camera writes to.
 
 ---
 
