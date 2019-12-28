@@ -26,7 +26,7 @@ sudo ufw allow 21/tcp
 sudo ufw allow 990/tcp
 sudo ufw allow 40000:50000/tcp
 ```
-Checking if the ports are indeed open.
+Check if the ports are indeed open.
 
 `sudo ufw status/tcp`
 
