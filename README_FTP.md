@@ -28,7 +28,7 @@ sudo ufw allow 40000:50000/tcp
 ```
 Check if the ports are indeed open.
 
-`sudo ufw status/tcp`
+`sudo ufw status`
 
 The result should look [like this](ftp/ufw_status.txt).
 
