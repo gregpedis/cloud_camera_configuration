@@ -97,12 +97,14 @@ depending on `fstab` finding the device during startup. Neat.
 
 ---
 
-It's time to actually configure **vsftpd**. The way that happens is by editing the *.conf* file of the service,
-which exists at `/etc/vsftpd.conf`. Saving the original configuration as backup is always a wise decision.
+It's time to actually configure **vsftpd**. 
+The way that happens is by editing the configuration file of the service.
+Saving the original file as backup is always a wise decision.
 
 `sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig`
 
 The necessary configuration is [linked here](ftp/vsftpd.conf).
+Copy the file in `/etc/`. 
 
 To add the ***camera*** user to the accepted list of ftp users execute the following command.
 
