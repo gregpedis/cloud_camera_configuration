@@ -13,6 +13,7 @@ so that it is possible to be accessed outside of the local network.
 ---
 
 In order to acess the camera by a **hostname**, a **dynamic DNS provider** is necessary. 
+
 The one i used is the free [Now-DNS](https://now-dns.com/?p=clients) and updating it is relatively easy.
 
 In order to update the ip address and the domain name in a linux environment, 
