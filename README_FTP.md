@@ -25,10 +25,9 @@ sudo ufw allow 20/tcp
 sudo ufw allow 21/tcp
 sudo ufw allow 990/tcp
 sudo ufw allow 40000:50000/tcp
-```
-Check if the ports are indeed open.
 
-`sudo ufw status`
+sudo ufw status
+```
 
 The result should look like this.
 
@@ -55,6 +54,7 @@ Add the new ***camera*** user and then create the **ftp directory** with the rig
 
 ```
 sudo adduser camera
+
 sudo mkdir /home/camera/ftp
 sudo chown nobody:nogroup /home/camera/ftp
 sudo chmod a-w /home/camera/ftp
