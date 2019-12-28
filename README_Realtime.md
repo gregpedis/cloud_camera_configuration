@@ -15,8 +15,7 @@ In order to keep that address static, a **dynamic DNS provider** is necessary.
 The one i used is the free [Now-DNS](https://now-dns.com/?p=clients) and updating it is relatively easy.
 
 In order to update the ip address and the domain name in a linux environment, 
-a single line of code should be added to the user's **crontab**. 
-To access that crontab, just use the following command.
+access that crontab via the following command.
 
 <pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
