@@ -86,9 +86,9 @@ For example, by plugging a usb dongle there should be a new device named **sda**
 
 The important thing here is the **UUID**, marked with bold, 
 since it's the unique id necessary for the system to auto-mount the device on reboot.
-All that's left is to add the following line to the end of the file at `/etc/fstab/`.
+Edit the file `/etc/fstab` and add the following line at the end of the file, 
+replacing the *\<my-usb-uuid\>* with your device's **UUID**.
 
-And add the following line at the end of the file, replacing the *\<my-usb-uuid\>* with your device's **UUID**.
 <pre><b>UUID</b>=<i>&ltmy-usb-uuid&gt</i> home/camera/ftp/files <b>auto nosuid,nodev,nofail</b> 0 0</pre>
 
 With this directory/mounting configuration,
