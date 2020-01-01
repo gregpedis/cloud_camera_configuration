@@ -1,0 +1,12 @@
+#!/bin/bash
+
+now=$(/bin/date)
+today=$(/bin/date +%d_%m_%Y)
+temperature=$(/usr/bin/vcgencmd measure_temp)
+
+directory_path="/home/camera/ftp/files"
+base_name="temperature_checkup"
+file_name="${directory_path}/${base_name}_${today}.txt"
+
+echo "${now} ${temperature}" | sudo /usr/bin/tee -a ${file_name} 
+

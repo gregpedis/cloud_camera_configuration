@@ -1,0 +1,11 @@
+#! /bin/bash
+
+mail="trafalgar1618@hotmail.com"
+password="abMJ9c*v8dinfMYa88Vj" 
+
+base_url="https://now-dns.com/update?hostname="
+hostname="kenji1618.001www.com"
+
+/usr/bin/curl -u ${mail}:${password} "${base_url}${hostname}"
+echo
+
