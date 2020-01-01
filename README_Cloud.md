@@ -77,11 +77,11 @@ Create a folder on your MEGA account storage and name it `Camera_Files`. After t
 sudo mega-backup /home/camera/ftp/files /Camera_Files --period="0 0 20 * * *" --num-backups=7 
 ```
 What this does is configure a backup of `/home/camera/ftp/files` in the `Camera_Files` remote folder, 
-every day at midnight, while preserving the last **7** backups.
+**every day at midnight**, while preserving the last **7 backups**.
 
-For some reason, backups run 4 hours after scheduled, 
+For some reason, backups run **4 hours after** scheduled, 
 which is why my configuration has the **hour** parameter in the cron-like syntax set to **20**.
-What this means is since the backup should run at midnight, it should be configured **4 hours** before midnight.
+What this means is since the backup should run at **midnight**, it should be configured **4 hours** before midnight.
 
 For more information how MEGA backups work, [click here](https://github.com/meganz/MEGAcmd/blob/master/contrib/docs/BACKUPS.md).
 
