@@ -26,11 +26,11 @@ meaning the ftp files directory will be copied at a daily interval.
 
 The `mega-tools` package contains lots of cli commands, but the ones we are going to use are the following.
 
-| Command | Description |
-| ------- | ----------- |
+| Command | Functionality |
+| ------- | ------------- |
 | mega-server | Initializes a daemon running the backups |
 | mega-login  | Logins with a user's credentials         |
-| mega-backup | Handles the backup scheduling            |
+| mega-backup | Configures the backup scheduling         |
 
 ---
 3. Execute mega-login
