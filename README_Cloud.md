@@ -28,7 +28,7 @@ The `mega-tools` package contains lots of cli commands, but the ones we are goin
 | mega-backup | Configures the backup scheduling         |
 
 For more information on the cli commands, 
-check [MEGAcmd's github repository](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md)
+check [MEGAcmd's documentation](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md).
 
 ---
 Create a MEGA account [here](https://mega.nz/register).
