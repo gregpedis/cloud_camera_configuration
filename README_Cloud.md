@@ -28,8 +28,8 @@ The `mega-tools` package contains lots of cli commands, but the ones we are goin
 
 | Command | Functionality |
 | ------- | ------------- |
-| mega-server | Initializes a daemon running the backups |
 | mega-login  | Logins with a user's credentials         |
+| mega-server | Initializes a daemon running the backups |
 | mega-backup | Configures the backup scheduling         |
 
 ---
