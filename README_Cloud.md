@@ -69,3 +69,6 @@ The result should look like this.
 </pre>
 
 ---
+To configure a backup schedule, 
+
+
