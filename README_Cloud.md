@@ -131,4 +131,5 @@ Add the following line at the end of the file.
 
 ---
 The configuration should be complete by now.
-For reference, [this](files/crontab.txt) is how your crontab file should look. 
+
+For reference, [this](files/crontab.txt) is what your crontab file should contain. 
