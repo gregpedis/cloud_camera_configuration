@@ -10,14 +10,11 @@ There are, roughly speaking, three necessary aspects for setting this up:
 ---
 
 Also, there are configuration files provided, as well as some helpful examples and details text files.
-The files are sorted based on their use case, which results in three folders:
 
-* [ftp](ftp) - Configuration files for the ftp server.
-* [cloud](cloud) - Configuration files for the cloud storage.
-* [common](common) - Configuration files with general purpose.
+You can find them [here](files).
 
-The *.txt* files are usually examples, details or command-line outputs, 
-whereas the rest of the files are segments or completed parts of the camera's ocnfriguration.
+The *.txt* files are usually examples, details or command-line outputs,  
+whereas the rest of the files are segments or completed parts of the camera's configuration.
 
 ---
 
