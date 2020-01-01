@@ -57,15 +57,15 @@ sudo systemctl status megaCmdServer
 ```
 
 The result should look like this.
-```
+<pre>
 ● megaCmdServer.service - Starting the mega-cmd-server that backups the necessary files.
-   Loaded: loaded (/etc/systemd/system/megaCmdServer.service; enabled; vendor preset: enabled)
-   Active: active (running) since Tue 2019-12-31 14:27:43 EET; 24h ago
+   Loaded: <b>loaded (/etc/systemd/system/megaCmdServer.service; enabled</b>; vendor preset: enabled)
+   Active: <b>active (running)</b> since Tue 2019-12-31 14:27:43 EET; 24h ago
  Main PID: 592 (mega-cmd-server)
     Tasks: 14 (limit: 2200)
    Memory: 32.7M
    CGroup: /system.slice/megaCmdServer.service
            └─592 /usr/bin/mega-cmd-server
-```
+</pre>
 
 ---
