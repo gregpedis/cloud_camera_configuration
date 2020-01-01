@@ -28,9 +28,9 @@ The `mega-tools` package contains lots of cli commands, but the ones we are goin
 
 | Command | Description |
 | ------- | ----------- |
-| mega-server | Initializes a daemon running the backups |
-| mega-login  | Logins with a user's credentials         |
-| mega-backup | Handles the backup scheduling            |
+| `mega-server` | Initializes a daemon running the backups |
+| `mega-login`  | Logins with a user's credentials         |
+| `mega-backup` | Handles the backup scheduling            |
 
 ---
 3. Execute mega-login
