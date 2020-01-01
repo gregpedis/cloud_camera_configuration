@@ -70,5 +70,14 @@ The result should look like this.
 </pre>
 
 ---
-To configure a backup schedule, 
+To configure a backup schedule, we are going to use the `mega-backup` command.
+
+Create a folder on your MEGA account storage and name it `Camera_Files`. After that, execute the following command.
+```
+sudo mega-backup /home/camera/ftp/files /Camera_Files --period="0 0 20 * * *" --num-backups=7 
+```
+What this does is configure a backup of `/home/camera/ftp/files` in the `Camera_Files` remote folder, 
+every day at 20:00, while preserving the last 7 backups.
+
+For more information how MEGA backups work, [click here](https://github.com/meganz/MEGAcmd/blob/master/contrib/docs/BACKUPS.md).
 
