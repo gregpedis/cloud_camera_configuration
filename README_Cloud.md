@@ -20,7 +20,17 @@ sudo apt install megatools
 ```
 
 ---
-2. create mega account
+Create a MEGA account [here](https://mega.nz/register).
+After that everything should be ready to start configuring a backup schedule,
+meaning the ftp files directory will be copied at a daily interval.
+
+The `mega-tools` package contains lots of cli commands, but the ones we are going to use are the following.
+
+| Command | Description |
+| ------- | ----------- |
+| mega-server | Initializes a daemon running the backups |
+| mega-login  | Logins with a user's credentials         |
+| mega-backup | Handles the backup scheduling            |
 
 ---
 3. Execute mega-login
@@ -29,6 +39,3 @@ sudo apt install megatools
 4. Configure backup schedule
 
 ---
-| ftp | cloud | common |
-| --- | ----- | ------ |
-| ftp server configuration files | cloud storage configuration files | general purpose configuration files |
