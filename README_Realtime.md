@@ -17,17 +17,14 @@ In order to acess the camera by a **hostname**, a **dynamic DNS provider** is ne
 The one i used is the free [Now-DNS](https://now-dns.com/?p=clients) and updating it is relatively easy.
 
 In order to update the ip address and the domain name in a linux environment, 
-copy [this script](/files/update_dns) in the folder `/home/pi/bin`,
+copy [this script](/files/update_dns) in `/home/pi/bin`,
 replacing all the necessary values with the ones from your dynamic dns provider account. 
 If the folder does not exist, create it first.
 
 After that, access the crontab of **user** via the following command.
-
 <pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
-Add the following line at the end of the file, 
-
-
+Add the following line at the end of the file.
 <pre>****/3 * * * * <b>/home/pi/bin/update_dns</b> </pre>
 
 Remote, real-time access to the camera should be working by now.
