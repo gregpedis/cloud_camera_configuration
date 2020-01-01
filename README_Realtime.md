@@ -25,6 +25,6 @@ After that, access the crontab of **user** via the following command.
 <pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
 Add the following line at the end of the file.
-<pre>*/3 * * * * <b>/home/pi/bin/update_dns</b> </pre>
+<pre>*/3 * * * * /home/pi/bin/update_dns</pre>
 
 Remote, real-time access to the camera should be working by now.
