@@ -44,8 +44,9 @@ Before configuring the backup schedule,
 it is important to initialize the mega-server daemon on a possible system reboot,
 since it is the one responsible for scheduling the backups.
 
-MEGA tools do not allow any sort of configuration for that functionality,
+MEGA tools do not supply that functionality,
 which means we have to create our own systemd service to start the daemon.
 
+Copy [this file](files/megaCmdServer.service) in `/etc/systemd/system`. Requires root access.
 
 ---
