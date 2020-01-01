@@ -19,11 +19,6 @@ After that, install the actual cli tools.
 sudo apt install megatools
 ```
 
----
-Create a MEGA account [here](https://mega.nz/register).
-After that everything should be ready to start configuring a backup schedule,
-meaning the ftp files directory will be copied at a daily interval.
-
 The `mega-tools` package contains lots of cli commands, but the ones we are going to use are the following.
 
 | Command | Functionality |
@@ -31,6 +26,14 @@ The `mega-tools` package contains lots of cli commands, but the ones we are goin
 | mega-login  | Logins with a user's credentials         |
 | mega-server | Initializes a daemon running the backups |
 | mega-backup | Configures the backup scheduling         |
+
+For more information on the cli commands, 
+MEGAcmd's github repository has [some documentation](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md)
+
+---
+Create a MEGA account [here](https://mega.nz/register).
+After that everything should be ready to start configuring a backup schedule,
+meaning the ftp files directory will be copied at a set time interval.
 
 ---
 Logging in with the user's credentials is an one time thing, since the MEGA service keeps the information in the device indefinitely.
@@ -70,7 +73,4 @@ The result should look like this.
 
 ---
 To configure a backup schedule, 
-
-
-[something](#cloud-storage)
 
