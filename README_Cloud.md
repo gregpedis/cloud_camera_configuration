@@ -83,6 +83,37 @@ For some reason, backups run **4 hours after** scheduled,
 which is why my configuration has the **hour** parameter in the cron-like syntax set to **20**.
 What this means is since the backup should run at **midnight**, it should be configured **4 hours** before midnight.
 
+Check if the backup schedule configuration is correct. 
+```
+sudo mega-backup -l
+```
+
+The result should look like the following snippet.
+```
+TAG   LOCALPATH                                      REMOTEPARENTPATH                                       STATUS
+5     /home/camera/ftp/files                         /Camera_Files                                          ACTIVE
+  Max Backups:   7
+  Period:         "0 0 20 * * *"
+  Next backup scheduled for: Sun, 04 Mar 1979 22:00:00 +0200
+```
+
 *For more information on how MEGA backups work, 
 [click here](https://github.com/meganz/MEGAcmd/blob/master/contrib/docs/BACKUPS.md).*
+
+---
+Now we need to clean the files directory so that the daily backup format is achieved.
+We are going to use a python script to delete every file added during the previous days.
+
+To begin with, install python3.
+
+`sudo apt install python3`
+
+After that, copy [this file](files/folder_cleanse.py) in the `/home/camera` directory.
+
+Edit the crontab of **user**.
+
+<pre>crontab -e -u <b>&ltuser&gt</pre>
+
+---
+
 
