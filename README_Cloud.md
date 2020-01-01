@@ -110,9 +110,12 @@ To begin with, install python3.
 
 After that, copy [this file](files/folder_cleanse.py) in the `/home/camera` directory.
 
-Edit the crontab of **user**.
-
+Access the crontab of **user** via the following command.
 <pre>crontab -e -u <b>&ltuser&gt</pre>
+
+Add the following line at the end of the file.
+
+`0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py`
 
 ---
 
