@@ -118,12 +118,17 @@ Add the following line at the end of the file.
 `0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py`
 
 ---
+Finally, since i'm using a raspberry pi, a device overheat is possible so logging the temperature is quite useful.
 
+Copy [this file](files/log_temperature) in the `/home/pi/bin` directory.
 
-[example of crontab](files/crontab.txt)
+Access the crontab of **user** via the following command.
+<pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
+Add the following line at the end of the file.
 
 `15,30,45 * * * * /home/pi/bin/log_temperature`
 
-
-
+---
+The configuration should be complete by now.
+Finally, here is my [crontab file](files/crontab.txt) for reference. 
