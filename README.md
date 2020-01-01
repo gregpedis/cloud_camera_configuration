@@ -18,7 +18,7 @@ whereas the rest of the files are segments or completed parts of the camera's co
 
 ---
 
-The system used has the following properties.
+### System Properties
 
 <pre>
 <b>OS:</b> Raspbian GNU/Linux 10 (buster) armv7l
