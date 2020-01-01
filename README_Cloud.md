@@ -27,8 +27,8 @@ The `mega-tools` package contains lots of cli commands, but the ones we are goin
 | mega-server | Initializes a daemon running the backups |
 | mega-backup | Configures the backup scheduling         |
 
-For more information on the cli commands, 
-check [MEGAcmd's documentation](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md).
+*For more information on the cli commands, 
+check [MEGAcmd's documentation](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md).*
 
 ---
 Create a MEGA account [here](https://mega.nz/register).
@@ -83,5 +83,6 @@ For some reason, backups run **4 hours after** scheduled,
 which is why my configuration has the **hour** parameter in the cron-like syntax set to **20**.
 What this means is since the backup should run at **midnight**, it should be configured **4 hours** before midnight.
 
-For more information how MEGA backups work, [click here](https://github.com/meganz/MEGAcmd/blob/master/contrib/docs/BACKUPS.md).
+*For more information on how MEGA backups work, 
+[click here](https://github.com/meganz/MEGAcmd/blob/master/contrib/docs/BACKUPS.md).*
 
