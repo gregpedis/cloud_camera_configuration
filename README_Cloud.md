@@ -35,9 +35,7 @@ Create a MEGA account [here](https://mega.nz/register).
 After that everything should be ready to start configuring a backup schedule,
 meaning the ftp files directory will be copied at a set time interval.
 
----
 Logging in with the user's credentials is an one time thing, since the MEGA service keeps the information in the device indefinitely.
-
 That being said, execute the following, while replacing the necessary values with your account's details.
 
 <pre>mega-login <i>&ltemail&gt</i> <i>&ltpassword&gt</i></pre>
