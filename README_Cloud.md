@@ -114,10 +114,16 @@ Access the crontab of **user** via the following command.
 <pre>crontab -e -u <b>&ltuser&gt</b></pre>
 
 Add the following line at the end of the file.
-```
-0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py
-```
+
+`0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py`
 
 ---
+
+
+[example of crontab](files/crontab.txt)
+
+
+`15,30,45 * * * * /home/pi/bin/log_temperature`
+
 
 
