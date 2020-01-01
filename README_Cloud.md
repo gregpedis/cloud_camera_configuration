@@ -116,7 +116,6 @@ Access the crontab of **user** via the following command.
 Add the following line at the end of the file.
 
 `0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py`
-
 ---
 
 
