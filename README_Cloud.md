@@ -104,7 +104,7 @@ TAG   LOCALPATH                                      REMOTEPARENTPATH           
 Now we need to clean the files directory so that the daily backup format is achieved.
 We are going to use a python script to delete every file added during the previous days.
 
-To begin with, install python3.
+To begin with, install **python3**.
 
 `sudo apt install python3`
 
