@@ -23,6 +23,7 @@ The system used has the following properties.
 <pre>
 <b>OS:</b> Raspbian GNU/Linux 10 (buster) armv7l
 <b>Host:</b> Raspberry Pi 3 Model B Plus Rev 1.3
+<b>Hostname:</b> raspberrypi3
 <b>User:</b> pi
 <b>Kernel:</b> 4.19.75-v7+
 <b>Uptime:</b> 11 days, 1 hour, 19 mins
