@@ -33,9 +33,19 @@ The `mega-tools` package contains lots of cli commands, but the ones we are goin
 | mega-backup | Configures the backup scheduling         |
 
 ---
-3. Execute mega-login
+Logging in with the user's credentials is an one time thing, since the MEGA service keeps the information in the device indefinitely.
+
+That being said, execute the following, while replacing the necessary values with your account's details.
+
+<pre>mega-login <i>&ltemail&gt</i> <i>&ltpassword&gt</i></pre>
 
 ---
-4. Configure backup schedule
+Before configuring the backup schedule, 
+it is important to initialize the mega-server daemon on a possible system reboot,
+since it is the one responsible for scheduling the backups.
+
+MEGA tools do not allow any sort of configuration for that functionality,
+which means we have to create our own systemd service to start the daemon.
+
 
 ---
