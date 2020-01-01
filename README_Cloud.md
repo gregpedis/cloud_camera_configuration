@@ -47,6 +47,25 @@ since it is the one responsible for scheduling the backups.
 MEGA tools do not supply that functionality,
 which means we have to create our own systemd service to start the daemon.
 
-Copy [this file](files/megaCmdServer.service) in `/etc/systemd/system`. Requires root access.
+Copy [this file](files/megaCmdServer.service) in `/etc/systemd/system`.
+
+After that, **start** and **enable** the service and check if everything runs smoothly.
+```
+sudo systemctl start megaCmdServer
+sudo systemctl enable megaCmdServer
+sudo systemctl status megaCmdServer
+```
+
+The result should look like this.
+```
+● megaCmdServer.service - Starting the mega-cmd-server that backups the necessary files.
+   Loaded: loaded (/etc/systemd/system/megaCmdServer.service; enabled; vendor preset: enabled)
+   Active: active (running) since Tue 2019-12-31 14:27:43 EET; 24h ago
+ Main PID: 592 (mega-cmd-server)
+    Tasks: 14 (limit: 2200)
+   Memory: 32.7M
+   CGroup: /system.slice/megaCmdServer.service
+           └─592 /usr/bin/mega-cmd-server
+```
 
 ---
