@@ -2,7 +2,7 @@
 
 Access the **dhcp address reservation** panel in the router
 and bind a lan ip address to the camera's mac address
-in order to set a **static** ip address.
+in order to set a **static** local ip address.
 
 ---
 
