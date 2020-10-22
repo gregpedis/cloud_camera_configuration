@@ -11,8 +11,8 @@ DAYS_BACK_UPLOAD = 1
 
 username = "trafalgar1618@hotmail.com"
 password = "yaft9BAUH.sqay0waus"
-expire_seconds = 7200
-expire_inactive_seconds = 3600
+expire_seconds = 36000
+expire_inactive_seconds = 36000
 
 method_auth = "userinfo"
 method_listfolder = "listfolder"
@@ -31,11 +31,11 @@ def to_be_uploaded(f):
     ctime = os.path.getctime(f)
     mtime = os.path.getmtime(f)
 
-    if ctime>=0 and mtime>=0:
+    if ctime >= 0 and mtime >= 0:
         time = min(ctime, mtime)
-    elif ctime>=0:
+    elif ctime >= 0:
         time = ctime
-    elif mtime>=0:
+    elif mtime >= 0:
         time = mtime
     else:
         return False
@@ -140,7 +140,6 @@ def main():
     delete_folder(token)
     create_folder(token)
     upload_files(token)
-    pass
 
 
 if __name__ == "__main__":
