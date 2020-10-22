@@ -5,6 +5,7 @@ import datetime as dt
 BASE_ENDPOINT = "https://api.pcloud.com/"
 BASE_PATH = "/some2"
 FTP_FOLDER = '/home/camera/ftp/files/'
+
 DAYS_BACK_DELETE = 5
 DAYS_BACK_UPLOAD = 1
 
@@ -29,7 +30,17 @@ def generate_foldername(days_back=0):
 def to_be_uploaded(f):
     ctime = os.path.getctime(f)
     mtime = os.path.getmtime(f)
-    creation_date = dt.date.fromtimestamp(min(ctime, mtime))
+
+    if ctime>=0 and mtime>=0:
+        time = min(ctime, mtime)
+    elif ctime>=0:
+        time = ctime
+    elif mtime>=0:
+        time = mtime
+    else:
+        return False
+
+    creation_date = dt.date.fromtimestamp(time)
     delta = dt.date.today() - creation_date
     return delta.days == DAYS_BACK_UPLOAD
 
