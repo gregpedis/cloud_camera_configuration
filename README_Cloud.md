@@ -27,6 +27,7 @@ Keep in mind that both scripts are designed to be executed in late night/early m
 ---
 
 For the **local operations script**, the configuration is as follows:
+
 <pre>
 <b>DAYS_BACK</b> = 5
 <b>FTP_FOLDER</b> = '/home/camera/ftp/files'
@@ -87,6 +88,7 @@ Add the following lines at the end of the file.
 
 <pre>
 0 2 * * * sudo /usr/bin/python3 /home/camera/operations_<b>local</b>.py
+
 0 4 * * * sudo /usr/bin/python3 /home/camera/operations_<b>cloud</b>.py
 </pre>
 
