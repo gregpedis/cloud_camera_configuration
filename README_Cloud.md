@@ -11,7 +11,7 @@ The username and password will be necessary in the synchronization circle.
 ---
 The entire cloud process will be done via two python scripts, so initially we have to install **python3**, as following.
 
-`sudo apt install python3 -y`
+<pre>sudo apt install python3 -y</pre>
 
 There are two files that do the necessary file system operations, as following.
 
