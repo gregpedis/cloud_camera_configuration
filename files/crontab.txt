@@ -6,6 +6,10 @@
 # Example every hour at 15,30 and 45 minutes minutes.
 15,30,45 * * * * /home/pi/bin/log_temperature 
 
-# Cleaning up the camera files folder.
+# Cleaning up the local ftp directory.
+# Example is every day at 2:00 AM.
+0 2 * * * sudo /usr/bin/python3 /home/camera/operations_local.py
+
+# Cleaning up the remote cloud directory and upload any new files.
 # Example is every day at 4:00 AM.
-0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py
+0 4 * * * sudo /usr/bin/python3 /home/camera/operations_cloud.py
