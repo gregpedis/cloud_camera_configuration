@@ -4,15 +4,25 @@ The cloud storage service to be used is [pCloud](https://my.pcloud.com/) since i
 
 ---
 
-Firstly, create a pCloud account [here](https://my.pcloud.com/register).
+Firstly, create a pCloud account [here](https://my.pcloud.com/register). 
+
+The username and password will be necessary in the synchronization circle.
 
 ---
-Before configuring the backup schedule, 
-it is important to initialize the mega-server daemon on a possible system reboot,
-since it is the one responsible for scheduling the backups.
+The entire cloud process will be done via two python scripts, so initially we have to install python, as following.
 
-MEGA tools do not supply that functionality,
-which means we have to create our own systemd service to start the daemon.
+`sudo apt install python3 -y`
+
+There are two files that do the necessary file system operations, as following.
+
+- [local operations](files/operations_local.py) which removes the local ftp files if they are too old.
+- [cloud operations](files/operations_cloud.py) which removes and uploads files to the pCloud file system.
+
+Copy both of these files in the `/home/camera/ftp` directory.
+
+----
+
+
 
 Copy [this file](files/megaCmdServer.service) in `/etc/systemd/system`.
 
