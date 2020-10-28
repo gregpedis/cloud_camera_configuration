@@ -9,7 +9,7 @@ Firstly, create a pCloud account [here](https://my.pcloud.com/register).
 The username and password will be necessary in the synchronization circle.
 
 ---
-The entire cloud process will be done via two python scripts, so initially we have to install python, as following.
+The entire cloud process will be done via two python scripts, so initially we have to install **python3**, as following.
 
 `sudo apt install python3 -y`
 
@@ -89,24 +89,6 @@ Add the following lines at the end of the file.
 0 2 * * * sudo /usr/bin/python3 /home/camera/operations_<b>local</b>.py
 0 4 * * * sudo /usr/bin/python3 /home/camera/operations_<b>cloud</b>.py
 </pre>
-
-
----
-Now we need to clean the files directory so that the daily backup format is achieved.
-We are going to use a python script to delete every file added during the previous days.
-
-To begin with, install **python3**.
-
-`sudo apt install python3`
-
-After that, copy [this file](files/folder_cleanse.py) in the `/home/camera` directory.
-
-Access the crontab of **user** via the following command.
-<pre>crontab -e -u <b>&ltuser&gt</b></pre>
-
-Add the following line at the end of the file.
-
-`0 4 * * * sudo /usr/bin/python3 /home/camera/folder_cleanse.py`
 
 ---
 Finally, since i'm using a raspberry pi, a device overheat is possible so logging the temperature is quite useful.
