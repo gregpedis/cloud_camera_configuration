@@ -1,4 +1,4 @@
-# Cloud Storage
+# Cloud Storage (pCloud)
 
 The cloud storage service to be used is [pCloud](https://my.pcloud.com/) since it's free and provides a simple and easy to use API.
 
