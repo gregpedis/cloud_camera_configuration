@@ -1,4 +1,4 @@
-# Cloud Storage
+# Cloud Storage (MEGA)
 
 The cloud storage service to be used is [MEGA](https://mega.nz/start) since it's free and provides command-line interface tools.
 
