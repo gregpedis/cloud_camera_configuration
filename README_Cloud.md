@@ -102,7 +102,7 @@ Access the crontab of **user** via the following command.
 
 Add the following line at the end of the file.
 
-`15,30,45 * * * * /home/pi/bin/log_temperature`
+<pre>15,30,45 * * * * /home/pi/bin/log_temperature</pre>
 
 ---
 The configuration should be complete by now.
