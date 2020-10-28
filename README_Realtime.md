@@ -19,7 +19,7 @@ The one i used is the free [Now-DNS](https://now-dns.com/?p=clients) and updatin
 In order to update the ip address and the domain name in a linux environment, 
 copy [this script](/files/update_dns) in `/home/pi/bin`,
 replacing all the necessary values with the ones from your dynamic dns provider account. 
-If the folder does not exist, create it first.
+If the directory does not exist, create it first.
 
 After that, access the crontab of **user** via the following command.
 <pre>crontab -e -u <b>&ltuser&gt</b></pre>
