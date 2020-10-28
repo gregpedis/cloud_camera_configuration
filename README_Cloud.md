@@ -78,59 +78,18 @@ The *BASE_ENDPOINT*, *expire* options and *method* options define boilerplate co
 
 ---
 
+After setting up the files and the configuration of the files, the scheduling needs to be setup.
 
+Access the crontab of **user** via the following command.
+<pre>crontab -e -u <b>&ltuser&gt</b></pre> 
 
-Copy [this file](files/megaCmdServer.service) in `/etc/systemd/system`.
+Add the following lines at the end of the file.
 
-After that, **start** and **enable** the service and check if everything runs smoothly.
-```
-sudo systemctl start megaCmdServer
-sudo systemctl enable megaCmdServer
-sudo systemctl status megaCmdServer
-```
-
-The result should look like this.
 <pre>
-● megaCmdServer.service - Starting the mega-cmd-server that backups the necessary files.
-   Loaded: <b>loaded (/etc/systemd/system/megaCmdServer.service; enabled</b>; vendor preset: enabled)
-   Active: <b>active (running)</b> since Tue 2019-12-31 14:27:43 EET; 24h ago
- Main PID: 592 (mega-cmd-server)
-    Tasks: 14 (limit: 2200)
-   Memory: 32.7M
-   CGroup: /system.slice/megaCmdServer.service
-           └─592 /usr/bin/mega-cmd-server
+0 2 * * * sudo /usr/bin/python3 /home/camera/operations_<b>local</b>.py
+0 4 * * * sudo /usr/bin/python3 /home/camera/operations_<b>cloud</b>.py
 </pre>
 
----
-To configure a backup schedule, we are going to use the `mega-backup` command.
-
-Create a folder on your MEGA account storage and name it `Camera_Files`. After that, execute the following command.
-```
-sudo mega-backup /home/camera/ftp/files /Camera_Files --period="0 0 20 * * *" --num-backups=7 
-```
-What this does is configure a backup of `/home/camera/ftp/files` in the `Camera_Files` remote folder, 
-**every day at midnight**, while preserving the last **7 backups**.
-
-For some reason, backups run **4 hours after** scheduled, 
-which is why my configuration has the **hour** parameter in the cron-like syntax set to **20**.
-What this means is since the backup should run at **midnight**, it should be configured **4 hours** before midnight.
-
-Check if the backup schedule configuration is correct. 
-```
-sudo mega-backup -l
-```
-
-The result should look like the following snippet.
-```
-TAG   LOCALPATH                                      REMOTEPARENTPATH                                       STATUS
-5     /home/camera/ftp/files                         /Camera_Files                                          ACTIVE
-  Max Backups:   7
-  Period:         "0 0 20 * * *"
-  Next backup scheduled for: Sun, 04 Mar 1979 22:00:00 +0200
-```
-
-*For more information on how MEGA backups work, 
-[click here](https://github.com/meganz/MEGAcmd/blob/master/contrib/docs/BACKUPS.md).*
 
 ---
 Now we need to clean the files directory so that the daily backup format is achieved.
