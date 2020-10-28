@@ -20,7 +20,63 @@ There are two files that do the necessary file system operations, as following.
 
 Copy both of these files in the `/home/camera/ftp` directory.
 
-----
+It is important to set some parameters in both scripts, residing at the top level of each of them.
+
+Keep in mind that both scripts are designed to be executed in late night/early morning times, generally after midnight.
+
+---
+
+For the **local operations script**, the configuration is as follows:
+<pre>
+<b>DAYS_BACK</b> = 5
+<b>FTP_FOLDER</b> = '/home/camera/ftp/files'
+</pre>
+
+- *FTP_FOLDER* is self-explanatory and most likely does not need changing.
+
+- *DAYS_BACK* option configures which day's files to delete. The formula is **Script_execution_date minus DAYS_BACK**.
+
+*For example, if you want to delete the last day's files and the script is running at 1:00 AM, DAYS_BACK should be 1.*
+
+---
+
+For the **cloud operations script**, the configuration is as follows:
+
+<pre>
+BASE_ENDPOINT = "https://api.pcloud.com/"
+<b>BASE_PATH</b> = "/camera_files"
+<b>FTP_FOLDER</b> = '/home/camera/ftp/files/'
+
+<b>DAYS_BACK_DELETE</b> = 5
+<b>DAYS_BACK_UPLOAD</b> = 1
+
+<b>username</b> = "placeholder"
+<b>password</b> = "placeholder"
+expire_seconds = 36000
+expire_inactive_seconds = 36000
+
+method_auth = "userinfo"
+method_listfolder = "listfolder"
+method_deletefolder = "deletefolderrecursive"
+method_createfolder = "createfolderifnotexists"
+method_uploadfile = "uploadfile"
+</pre>
+
+- *FTP_FOLDER* is self-explanatory and most likely does not need changing.
+
+- *BASE_PATH* defines the root folder in the pCloud file system and a directory with the same name should be manually created on your pCloud filesystem.
+
+- *DAYS_BACK_DELETE* behaves the same way as *DAYS_BACK* does on the local operations script, but instead removes remote files.
+
+- *DAYS_BACK_UPLOAD* behaves the same way as *DAYS_BACK* does on the local operations script, but instead uploads remote files.
+
+- *username* is your pCloud account's username.
+
+- *password* is your pCloud account's password.
+
+The *BASE_ENDPOINT*, *expire* options and *method* options define boilerplate configuration for pCloud's api, so no alterations needed.
+
+---
 
 
 
