@@ -3,7 +3,7 @@ import requests
 import datetime as dt
 
 BASE_ENDPOINT = "https://api.pcloud.com/"
-BASE_PATH = "/some2"
+BASE_PATH = "/camera_files"
 FTP_FOLDER = '/home/camera/ftp/files/'
 
 DAYS_BACK_DELETE = 5
