@@ -9,6 +9,7 @@
 # FTP 
 
 - `sudo apt update && apt install vsftpd ufw -y`
+- `sudo ufw allow ssh`
 - `sudo ufw allow 20/tcp`
 - `sudo ufw allow 21/tcp`
 - `sudo ufw allow 990/tcp`
