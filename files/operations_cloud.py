@@ -105,6 +105,18 @@ def delete_folder(token):
         return result_json
 
 
+def create_base_folder(token):
+    endpoint = BASE_ENDPOINT + method_createfolder
+    data = {
+            "auth": token,
+            "path": BASE_PATH
+    }
+
+    result = requests.post(endpoint, data=data)
+    result_json = result.json()
+    return result_json
+
+
 def create_folder(token):
     foldername = generate_foldername(DAYS_BACK_UPLOAD)
     endpoint = BASE_ENDPOINT + method_createfolder
@@ -137,6 +149,7 @@ def upload_files(token):
 
 def main():
     token = generate_token()
+    create_base_folder(token)
     delete_folder(token)
     create_folder(token)
     upload_files(token)
