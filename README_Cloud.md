@@ -20,6 +20,10 @@ There are two files that do the necessary file system operations, as following.
 
 Copy both of these files in the `/home/camera` directory.
 
+Add the user that will be running the scripts to the camera group. This is important because of file permissions on the ftp server.
+
+<pre>sudo usermod -a -G camera <b>&ltuser&gt</b></pre> 
+
 It is important to set some parameters in both scripts, residing at the top level of each of them.
 
 Keep in mind that both scripts are designed to be executed in late night/early morning times, generally after midnight.
