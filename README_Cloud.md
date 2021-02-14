@@ -18,7 +18,7 @@ There are two files that do the necessary file system operations, as following.
 - [local operations](files/operations_local.py) which removes the local ftp files if they are too old.
 - [cloud operations](files/operations_cloud.py) which removes and uploads files to the pCloud file system.
 
-Copy both of these files in the `/home/camera/ftp` directory.
+Copy both of these files in the `/home/camera` directory.
 
 It is important to set some parameters in both scripts, residing at the top level of each of them.
 
