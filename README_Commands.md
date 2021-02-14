@@ -3,8 +3,8 @@
 - dhcp address reservation -> static IP
 - Port-forward from router to camera 
 - create account to [Now-DNS](https://now-dns.com/?p=clients)
-- `sudo cp ./files/update_dns /home/pi/bin/`
-- add ` */3 * * * * /home/pi/bin/update_dns` to crontab by `crontab -e -u pi`
+- `sudo cp ./files/update_dns /home/<user>/bin/`
+- add ` */3 * * * * /home/<user>/bin/update_dns` to crontab by `crontab -e -u <user>`
 
 # FTP 
 
@@ -33,6 +33,7 @@
 # Cloud
 
 - `sudo apt install python3 -y`
+- `sudo usermod -a -G camera <user>`
 - `sudo cp ./files/operations_local.py /home/camera/ftp/`
 - `sudo cp ./files/operations_cloud.py /home/camera/ftp/`
 - change config parameters for local and cloud scripts
