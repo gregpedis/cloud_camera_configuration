@@ -9,8 +9,8 @@ FTP_FOLDER = '/home/camera/ftp/files/'
 DAYS_BACK_DELETE = 5
 DAYS_BACK_UPLOAD = 1
 
-username = "trafalgar1618@hotmail.com"
-password = "yaft9BAUH.sqay0waus"
+username = "<enter_email_address>"
+password = "<enter_password>"
 expire_seconds = 36000
 expire_inactive_seconds = 36000
 
