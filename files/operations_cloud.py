@@ -6,7 +6,7 @@ BASE_ENDPOINT = "https://api.pcloud.com/"
 BASE_PATH = "/camera_files"
 FTP_FOLDER = '/home/camera/ftp/files/'
 
-DAYS_BACK_DELETE = 5
+DAYS_BACK_DELETE = 6
 DAYS_BACK_UPLOAD = 1
 
 username = "<enter_email_address>"
@@ -19,6 +19,7 @@ method_listfolder = "listfolder"
 method_deletefolder = "deletefolderrecursive"
 method_createfolder = "createfolderifnotexists"
 method_uploadfile = "uploadfile"
+UPLOADED_FILES_GRANULARITY = 25
 
 
 def generate_foldername(days_back=0):
@@ -49,13 +50,9 @@ def get_files():
     os.chdir(FTP_FOLDER)
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
     valid_files = [f for f in files if to_be_uploaded(f)]
+    return valid_files
 
-    keyvalues = {}
-    for f in valid_files:
-        keyvalues[f] = open(f, 'rb')
-    return keyvalues
-
-
+    
 def generate_token():
     endpoint = BASE_ENDPOINT+method_auth
     data = {
@@ -141,10 +138,14 @@ def upload_files(token):
     }
 
     files = get_files()
-
-    result = requests.post(endpoint, data=data, files=files)
-    result_json = result.json()
-    return result_json
+    chunks = [files[x:x+UPLOADED_FILES_GRANULARITY] 
+            for x in range(0, len(files), UPLOADED_FILES_GRANULARITY)]
+    
+    for chunk in chunks:
+        keyvalues = {} 
+        for f in chunk:
+            keyvalues[f] = open(f, 'rb')
+        result = requests.post(endpoint, data=data, files=keyvalues)
 
 
 def main():

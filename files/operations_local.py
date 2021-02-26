@@ -1,7 +1,7 @@
 import os
 import datetime as dt
 
-DAYS_BACK = 5
+DAYS_BACK = 2
 FTP_FOLDER = '/home/camera/ftp/files/'
 
 
