@@ -1,0 +1,15 @@
+[Unit]
+Description=Executes a temperature measurement every set period of time. 
+Wants=network.target
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=root
+ExecStart=/usr/bin/python3 /home/pi/scripts/fan_monitor.py 2 0
+
+[Install]
+WantedBy=multi-user.target
+Alias=fanmonitor.service
