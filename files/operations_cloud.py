@@ -19,12 +19,12 @@ method_listfolder = "listfolder"
 method_deletefolder = "deletefolderrecursive"
 method_createfolder = "createfolderifnotexists"
 method_uploadfile = "uploadfile"
-UPLOADED_FILES_GRANULARITY = 25
+UPLOADED_FILES_GRANULARITY = 1
 
 
 def generate_foldername(days_back=0):
     date = dt.date.today() - dt.timedelta(days=days_back)
-    foldername = f"{date.year}_{date.month}_{date.day}"
+    foldername = date.strftime("%Y_%m_%d")
     return foldername
 
 
@@ -48,7 +48,7 @@ def to_be_uploaded(f):
 
 def get_files():
     os.chdir(FTP_FOLDER)
-    files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(FTP_FOLDER) for f in filenames]
     valid_files = [f for f in files if to_be_uploaded(f)]
     return valid_files
 

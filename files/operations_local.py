@@ -30,7 +30,7 @@ def remove_files(files):
 
 def main():
     os.chdir(FTP_FOLDER)
-    files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(FTP_FOLDER) for f in filenames]
 
     old_files = [f for f in files if to_be_deleted(f)]
     remove_files(old_files)
