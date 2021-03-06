@@ -1,6 +1,7 @@
 import os
 import requests
 import datetime as dt
+import time
 
 BASE_ENDPOINT = "https://api.pcloud.com/"
 BASE_PATH = "/camera_files"
@@ -48,11 +49,12 @@ def to_be_uploaded(f):
 
 def get_files():
     os.chdir(FTP_FOLDER)
-    files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(FTP_FOLDER) for f in filenames]
+    files = [os.path.join(dp, f) for dp, dn, filenames 
+        in os.walk(FTP_FOLDER) for f in filenames]
     valid_files = [f for f in files if to_be_uploaded(f)]
     return valid_files
 
-    
+
 def generate_token():
     endpoint = BASE_ENDPOINT+method_auth
     data = {
@@ -105,8 +107,8 @@ def delete_folder(token):
 def create_base_folder(token):
     endpoint = BASE_ENDPOINT + method_createfolder
     data = {
-            "auth": token,
-            "path": BASE_PATH
+        "auth": token,
+        "path": BASE_PATH
     }
 
     result = requests.post(endpoint, data=data)
@@ -127,7 +129,7 @@ def create_folder(token):
     return result_json
 
 
-def upload_files(token):
+def upload_files(token, files):
     foldername = generate_foldername(DAYS_BACK_UPLOAD)
     endpoint = BASE_ENDPOINT + method_uploadfile
     data = {
@@ -137,23 +139,30 @@ def upload_files(token):
         "nopartial": 1,
     }
 
-    files = get_files()
-    chunks = [files[x:x+UPLOADED_FILES_GRANULARITY] 
-            for x in range(0, len(files), UPLOADED_FILES_GRANULARITY)]
-    
+    chunks = [files[x:x+UPLOADED_FILES_GRANULARITY]
+              for x in range(0, len(files), UPLOADED_FILES_GRANULARITY)]
+
     for chunk in chunks:
-        keyvalues = {} 
+        keyvalues = {}
         for f in chunk:
             keyvalues[f] = open(f, 'rb')
-        result = requests.post(endpoint, data=data, files=keyvalues)
+        requests.post(endpoint, data=data, files=keyvalues)
 
 
 def main():
+    start_time = time.perf_counter()
+
     token = generate_token()
     create_base_folder(token)
     delete_folder(token)
     create_folder(token)
-    upload_files(token)
+
+    files = get_files()
+    upload_files(token, files)
+
+    end_time = time.perf_counter()
+    minutes_passed = (end_time - start_time) / 60
+    print(f"Finished uploading {len(files)} files in {minutes_passed:0.2f} minutes.")
 
 
 if __name__ == "__main__":
